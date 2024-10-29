@@ -3,6 +3,14 @@ package main
 
 import "fmt"
 
+type youtubeStruct struct{
+    url string
+    channel string
+    description string
+    // 0 for no started , 1 for in progress , 2 for Done
+    status int
+}
+
 // main is the entry point of the application
 func main() {
     result := add(3, 5)
