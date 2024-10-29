@@ -7,7 +7,7 @@ import (
 	dataloader "github.com/vickz86/manageYoutubeVideo/dataLoader"
 )
 
-type youtubeStruct struct{
+type YoutubeStruct struct{
     url string
     channel string
     description string
@@ -28,7 +28,3 @@ func main() {
     }
 }
 
-// add takes two integers and returns their sum
-func add(a int, b int) int {
-    return a + b
-}

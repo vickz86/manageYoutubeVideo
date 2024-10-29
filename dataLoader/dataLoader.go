@@ -6,6 +6,8 @@ import (
 	"log"
 	"os"
 	"strings"
+
+	mainFile "github.com/vickz86/manageYoutubeVideo"
 )
 
 // LoadFileLines reads a file and returns its lines as a slice of strings
@@ -65,7 +67,7 @@ func SplitEachLine(data string)([][]string){
 }
 
 
-func CreateSliceYoutube(data string)([]youtubeStruct){
+func CreateSliceYoutube(data string)([]mainFile.YoutubeStruct){
 	//create the slice of struct 
 	
 }
