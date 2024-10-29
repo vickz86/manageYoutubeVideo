@@ -64,3 +64,8 @@ func SplitEachLine(data string)([][]string){
 	return sliceOfSliceString
 }
 
+
+func CreateSliceYoutube(data string)([]youtubeStruct){
+	//create the slice of struct 
+	
+}
