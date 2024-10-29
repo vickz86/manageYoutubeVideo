@@ -1,7 +1,12 @@
 // main.go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+
+	dataloader "github.com/vickz86/manageYoutubeVideo/dataLoader"
+)
 
 type youtubeStruct struct{
     url string
@@ -13,8 +18,15 @@ type youtubeStruct struct{
 
 // main is the entry point of the application
 func main() {
-    result := add(3, 5)
-    fmt.Printf("The result of adding is: %d\n", result)
+    file,error := dataloader.LoadFileLines("data.txt")
+    if error!=nil{
+        log.Fatal("error loading file")
+    }
+
+    for _,v := range file{
+        fmt.Println(v)
+
+    }
 }
 
 // add takes two integers and returns their sum
