@@ -3,7 +3,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 
 	dataloader "github.com/vickz86/manageYoutubeVideo/dataLoader"
 )
@@ -18,13 +17,13 @@ type youtubeStruct struct{
 
 // main is the entry point of the application
 func main() {
-    file,error := dataloader.LoadFileLines("data.txt")
-    if error!=nil{
-        log.Fatal("error loading file")
-    }
+    file := dataloader.SplitEachLine("data.txt")
+    
 
     for _,v := range file{
         fmt.Println(v)
+        fmt.Println(len(v))
+
 
     }
 }

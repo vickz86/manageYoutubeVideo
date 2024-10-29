@@ -2,6 +2,7 @@ package dataloader
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -29,7 +30,7 @@ func LoadFileLines(filename string) ([]string, error) {
 }
 
 
-// return a slice of slice of string, make sure same number element in each slice of slice
+// return a slice of slice of string, make sure same number element in each slice of slice, data is name of file in same folder
 func SplitEachLine(data string)([][]string){
 	
 	// declare the variable
@@ -41,10 +42,25 @@ func SplitEachLine(data string)([][]string){
 		log.Fatal("error loading data!!")
 	}
 
-	for _,value := range rawSlice{
+	for index,value := range rawSlice{
+		// split each line based on ";"
 		elements := strings.Split(value,";")
+		
+		// create a slice of string based on slice "elements" and append it
 		sliceOfSliceString = append(sliceOfSliceString,elements)
+
+
+		//check if same number of element in each slice
+		if index==0{
+			continue
+		} else {
+			if len(elements) != len(sliceOfSliceString[index-1]){
+				fmt.Printf("ERROR , not the same number of element at index %v",index)
+			}
+		}
+
 	}
 
 	return sliceOfSliceString
 }
+
