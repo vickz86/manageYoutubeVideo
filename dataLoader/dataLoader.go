@@ -5,9 +5,10 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 
-	mainFile "github.com/vickz86/manageYoutubeVideo"
+	"github.com/vickz86/manageYoutubeVideo/model"
 )
 
 // LoadFileLines reads a file and returns its lines as a slice of strings
@@ -67,25 +68,33 @@ func SplitEachLine(data string)([][]string){
 }
 
 
-func CreateSliceYoutube(data string)([]mainFile.YoutubeStruct){
+func CreateSliceYoutube(data string)([]model.YoutubeStruct){
 
 	//create [][]string from the data file
 	sliceOfSlice :=SplitEachLine(data)
 
 
 	//create the slice of struct 
-	var youtubeSlice []mainFile.YoutubeStruct
+	var youtubeSlice []model.YoutubeStruct
 
 	// loop through the first slice
 	for _,value := range sliceOfSlice{
 		
-		//
-		fmt.Printf("the value 3 is of type %T",value[3])	
-
-
+		//convert the 3 value to an int
+		intStatus,err := strconv.Atoi(value[3])
+		if err!=nil{
+			fmt.Println("Error converting string to int:", err)
+		}	
 
 		// define a new struct and add value
-		// newYoutube := mainFile.YoutubeStruct{value[0],value[1],value[2],value[3]}
+		strucYoutube := model.YoutubeStruct{
+			url: value[0],
+			channel: value[1],
+			description: value[2],
+			status: intStatus,
+		}
+
+		youtubeSlice = append(youtubeSlice, strucYoutube)
 		
 	}
 
