@@ -67,7 +67,30 @@ func SplitEachLine(data string)([][]string){
 }
 
 
-func CreateSliceYoutube(data string)([]mainFile.YoutubeStruct){
+func CreateSliceYoutube(data [][]string)([]mainFile.YoutubeStruct){
+
 	//create the slice of struct 
+	var youtubeSlice []mainFile.YoutubeStruct
+
+	// loop through the first slice
+	for _,value := range data{
+		
+		//
+		fmt.Printf("the value 3 is of type %T",value[3])	
+
+
+
+		// define a new struct and add value
+		// newYoutube := mainFile.YoutubeStruct{value[0],value[1],value[2],value[3]}
+		
+	}
+
+	return youtubeSlice
+
+
+
+
+
+
 	
 }
