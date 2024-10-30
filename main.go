@@ -17,14 +17,18 @@ type YoutubeStruct struct{
 
 // main is the entry point of the application
 func main() {
-    file := dataloader.SplitEachLine("data.txt")
+
+
+    file := dataloader.CreateSliceYoutube("data.txt")
+    fmt.Println(file)
+    // file := dataloader.SplitEachLine("data.txt")
     
 
-    for _,v := range file{
-        fmt.Println(v)
-        fmt.Println(len(v))
+    // for _,v := range file{
+    //     fmt.Println(v)
+    //     fmt.Println(len(v))
 
 
-    }
+    // }
 }
 
