@@ -78,7 +78,7 @@ func CreateSliceYoutube(data string)([]model.YoutubeStruct){
 	var youtubeSlice []model.YoutubeStruct
 
 	// loop through the first slice
-	for _,value := range sliceOfSlice{
+	for nb,value := range sliceOfSlice{
 		
 		//convert the 3 value to an int
 		intStatus,err := strconv.Atoi(value[3])
@@ -88,10 +88,13 @@ func CreateSliceYoutube(data string)([]model.YoutubeStruct){
 
 		// define a new struct and add value
 		strucYoutube := model.YoutubeStruct{
-			url: value[0],
-			channel: value[1],
-			description: value[2],
-			status: intStatus,
+			//assigne the index field based on the nb in range
+			Index: nb,
+			Url: value[0],
+			Channel: value[1],
+			Description: value[2],
+			Status: intStatus,
+			
 		}
 
 		youtubeSlice = append(youtubeSlice, strucYoutube)

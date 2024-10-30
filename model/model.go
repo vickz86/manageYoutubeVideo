@@ -1,6 +1,7 @@
 package model
 
 type YoutubeStruct struct {
+	Index       int
 	Url         string
 	Channel     string
 	Description string
