@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"strings"
 
+	utifile "github.com/vickz86/GoFunctions/utiFile"
 	"github.com/vickz86/manageYoutubeVideo/model"
 )
 
@@ -103,4 +104,39 @@ func CreateSliceYoutube(data string) []model.YoutubeStruct {
 	}
 
 	return youtubeSlice
+}
+
+// WRITE
+
+// convert a struct into a string xxx;xxxx;xxx;
+func ConvertStrucToString(singleStruct model.YoutubeStruct) string {
+	var toConvert []string
+
+	//append url
+	toConvert = append(toConvert, singleStruct.Url)
+	//append channel
+	toConvert = append(toConvert, singleStruct.Channel)
+	//append description
+	toConvert = append(toConvert, singleStruct.Description)
+	//append status
+	toConvert = append(toConvert, strconv.Itoa(singleStruct.Status))
+
+	//create the string
+	outstring := strings.Join(toConvert, ";")
+
+	return outstring
+
+}
+
+func WriteYoutubeFile(filePath string, sliceStruc []model.YoutubeStruct) {
+
+	var outString []string
+
+	for _, el := range sliceStruc {
+		newString := ConvertStrucToString(el)
+		outString = append(outString, newString)
+	}
+
+	utifile.WriteFile(filePath,outString)
+
 }
