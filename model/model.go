@@ -14,7 +14,7 @@ type YoutubeStruct struct {
 
 // print index, description and status of a YoutubeStruct
 func (y YoutubeStruct) Describe() {
-	fmt.Printf("Index:%v\nDescription:\n%s\n",y.Index,y.Description)
+	fmt.Printf("Index:%v\nDescription:\n%s\nurl %s: ",y.Index,y.Description,y.Url)
 	//TODO , print status based on int value
 	switch y.Status{
 	case 0 :

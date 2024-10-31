@@ -2,3 +2,5 @@ github.com/toqueteos/webbrowser v1.2.0 h1:tVP/gpK69Fx+qMJKsLE7TD8LuGWPnEV71wBN9r
 github.com/toqueteos/webbrowser v1.2.0/go.mod h1:XWoZq4cyp9WeUeak7w7LXRUQf1F1ATJMir8RTqb4ayM=
 github.com/vickz86/GoFunctions v0.0.0-20241030191229-fea78ca80fb2 h1:YPvxRi7FgznpCKjdRDYpOdq9iV0YXf9veBWRvQ4Bs3o=
 github.com/vickz86/GoFunctions v0.0.0-20241030191229-fea78ca80fb2/go.mod h1:cnq2AW9YAjb6khB6/0yQfYIKcI7HvjElA1AnXO6qCLk=
+github.com/vickz86/GoFunctions v0.0.0-20241031161423-85a9c2fea378 h1:yy67US9N2Nry8FHi9SEk1lBMOvFLlj6mov2Jteycywo=
+github.com/vickz86/GoFunctions v0.0.0-20241031161423-85a9c2fea378/go.mod h1:cnq2AW9YAjb6khB6/0yQfYIKcI7HvjElA1AnXO6qCLk=
