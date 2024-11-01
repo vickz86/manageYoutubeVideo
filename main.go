@@ -51,6 +51,28 @@ func main() {
 }
 
 // - - - - FUNCTION - - - -
+
+// UTILITY
+
+
+//choose a correct index in the range to be used after
+func ChooseIndex(allLinks []model.YoutubeStruct)(int,error){
+	//get the max value
+	maxVal := len(allLinks) - 1
+	
+	question := "type the index , -1 to cancel operation"
+	
+	// get the index to open
+	indexNb := stringnumber.IntFromString(question, -1, maxVal)
+
+	if indexNb==-1{
+		return -1,errors.New("canceling opperation")
+	}
+
+	return indexNb,nil
+
+}
+
 // open a link based on index
 func OpenLink(allLinks []model.YoutubeStruct) {
 	//get the max value
@@ -85,6 +107,7 @@ func SplitStrinInTwo(theString string) (string, string, error) {
 
 }
 
+//set the time stamp for a model.YoutubeStruct
 func SetTimeStruct(allLinks []model.YoutubeStruct) []model.YoutubeStruct {
 	//get the max value
 	maxVal := len(allLinks) - 1
@@ -128,5 +151,27 @@ func SetTimeStruct(allLinks []model.YoutubeStruct) []model.YoutubeStruct {
 	}
 
 	return allLinks
+
+}
+
+
+//set the specified index video has done : status =2
+func MarkHasDone(allLinks []model.YoutubeStruct) []model.YoutubeStruct{
+	var index int
+
+	// get the index from the user
+	fmt.Println("type index to mark has done, or -1 to exit")
+	_,err := fmt.Scan(&index)
+	if err!=nil{
+		fmt.Println("error reading index")
+	}
+
+	//-1 return all links
+	if index == -1{
+		return allLinks
+	}
+
+
+	
 
 }
